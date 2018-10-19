@@ -12,10 +12,17 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    var name: String = ""
+    var agr:Int = 0
+    
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let cavalier = Cavalier()
+        let array = cavalier.allPropertiyNames(cls: self.classForCoder)
+        print(array)
+        print(cavalier.allMethods(cls: self.classForCoder))
         return true
     }
 
