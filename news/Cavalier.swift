@@ -9,7 +9,7 @@
 import UIKit
 import Aspects
 
-typealias Handler = () -> ()
+typealias Handler = @convention(block) (_ aspectInfo: AspectInfo) -> Void
 
 @objcMembers class Cavalier: NSObject {
     func allPropertiyNames(cls: AnyClass) -> [String] {
@@ -36,8 +36,20 @@ typealias Handler = () -> ()
         }
         return results
     }
+    static func hold(cls: AnyClass, selector: Selector, handler: @escaping Handler) -> Void {
+        let usingBlock: AnyObject = unsafeBitCast(handler, to: AnyObject.self)
+        do {
+            try print(cls.aspect_hook(selector, with: .positionBefore, usingBlock: usingBlock))
+        } catch {
+            
+        }
+    }
     
-    func hold(cls: AnyClass, selector: Selector, handler: Handler) -> Void {
-        
+    func hold(cls: AnyObject, selector: Selector, handler: @escaping Handler) -> Void {
+        do {
+            try _ = cls.aspect_hook(selector, with: .positionBefore, usingBlock: handler)
+        } catch {
+            
+        }
     }
 }

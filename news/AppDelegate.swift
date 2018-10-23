@@ -15,14 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var name: String = ""
     var agr:Int = 0
     
-    
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let cavalier = Cavalier()
-        let array = cavalier.allPropertiyNames(cls: self.classForCoder)
-        print(array)
-        print(cavalier.allMethods(cls: self.classForCoder))
+        print(cavalier.allPropertiyNames(cls: UIViewController.classForCoder()))
+        print(cavalier.allMethods(cls: UIViewController.classForCoder()))
+        cavalier.hold(cls: self, selector: #selector(applicationDidEnterBackground(_:))) { (aspectInfo) in
+            
+        }
+        Cavalier.hold(cls: UIViewController.classForCoder(), selector: #selector(ViewController.viewDidLoad), handler: { aspectInfo in
+            
+        })
         return true
     }
 

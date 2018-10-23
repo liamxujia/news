@@ -8,9 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate {
+    let tabelView = UITableView()
     
-
-
 }
 

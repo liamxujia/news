@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FD75220217F092C00B4601D /* SuperViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD7521F217F092C00B4601D /* SuperViewModel.swift */; };
+		1FD75222217F0E2600B4601D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD75221217F0E2600B4601D /* HomeViewController.swift */; };
+		1FD75224217F0FC400B4601D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD75223217F0FC400B4601D /* HomeViewModel.swift */; };
 		1FF212D62178334C00ED1948 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF212D52178334C00ED1948 /* AppDelegate.swift */; };
 		1FF212D82178334C00ED1948 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF212D72178334C00ED1948 /* ViewController.swift */; };
 		1FF212DD2178334E00ED1948 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FF212DC2178334E00ED1948 /* Assets.xcassets */; };
@@ -17,6 +20,9 @@
 
 /* Begin PBXFileReference section */
 		015F34B9A7413AE6E07A6176 /* Pods_news.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_news.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FD7521F217F092C00B4601D /* SuperViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperViewModel.swift; sourceTree = "<group>"; };
+		1FD75221217F0E2600B4601D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1FD75223217F0FC400B4601D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		1FF212D22178334C00ED1948 /* news.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = news.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FF212D52178334C00ED1948 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FF212D72178334C00ED1948 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +46,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1FD75219217F090900B4601D /* Modular */ = {
+			isa = PBXGroup;
+			children = (
+				1FD7521A217F090900B4601D /* Home */,
+			);
+			path = Modular;
+			sourceTree = "<group>";
+		};
+		1FD7521A217F090900B4601D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1FD7521B217F090900B4601D /* ViewModel */,
+				1FD7521C217F090900B4601D /* View */,
+				1FD75221217F0E2600B4601D /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		1FD7521B217F090900B4601D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1FD75223217F0FC400B4601D /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1FD7521C217F090900B4601D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1FD7521D217F091000B4601D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				1FD7521E217F091F00B4601D /* SuperClass */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		1FD7521E217F091F00B4601D /* SuperClass */ = {
+			isa = PBXGroup;
+			children = (
+				1FD7521F217F092C00B4601D /* SuperViewModel.swift */,
+			);
+			path = SuperClass;
+			sourceTree = "<group>";
+		};
 		1FF212C92178334C00ED1948 = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +116,8 @@
 		1FF212D42178334C00ED1948 /* news */ = {
 			isa = PBXGroup;
 			children = (
+				1FD7521D217F091000B4601D /* Common */,
+				1FD75219217F090900B4601D /* Modular */,
 				1FF212D52178334C00ED1948 /* AppDelegate.swift */,
 				1FF212D72178334C00ED1948 /* ViewController.swift */,
 				1FF212F42179BB8900ED1948 /* Cavalier.swift */,
@@ -162,11 +219,25 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-news/Pods-news-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework",
+				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Aspects.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -200,8 +271,11 @@
 			files = (
 				1FF212F72179BC1F00ED1948 /* CavalierInfo.swift in Sources */,
 				1FF212F52179BB8900ED1948 /* Cavalier.swift in Sources */,
+				1FD75224217F0FC400B4601D /* HomeViewModel.swift in Sources */,
+				1FD75220217F092C00B4601D /* SuperViewModel.swift in Sources */,
 				1FF212D82178334C00ED1948 /* ViewController.swift in Sources */,
 				1FF212D62178334C00ED1948 /* AppDelegate.swift in Sources */,
+				1FD75222217F0E2600B4601D /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +406,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LZGGBJSZG3;
 				INFOPLIST_FILE = news/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -351,6 +426,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LZGGBJSZG3;
 				INFOPLIST_FILE = news/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
